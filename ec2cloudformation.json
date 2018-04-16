@@ -2,11 +2,6 @@
      "Resources": {
      "Ec2Instance": {
          "Type" : "AWS::EC2::Instance",
-          "Parameters" : {
-         "InstanceCount" : {
-        "Description" : "Number of instances to start",
-        "Type" : "3"
-    },
         "Proprties": {
            "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
            "InstanceType" : "t2.micro",
@@ -27,4 +22,4 @@
             }
  }
  }
- }
+ 
