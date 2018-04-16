@@ -1,11 +1,16 @@
 { "Resources": {
      "Ec2Instance": {
          "Type" : "AWS::EC2::Instance",
+          "Parameters" : {
+         "InstanceCount" : {
+        "Description" : "Number of instances to start",
+        "Type" : "3"
+    },
         "Proprties": {
            "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
-          // "InstanceType" : "",
-           "KeyName": "mykey",
-           "ImageId" : "ami-7a11e213"
+           "InstanceType" : "t2.micro",
+           "KeyName": "ec2cli",
+           "ImageId" : "ami-6871a115"
          }
        },
        "InstanceSecurityGroup" : {
@@ -14,6 +19,8 @@
                  "GroupDescription" : "Enable SSH access via port 22",
                  "SecurityGroupIngress" : [ {
                           "IpProtocol" : "tcp",
+                          "IpProtocol" : "http"
+                          "IpProtocol  : "https"
                           "FromPort" : "22",
                           "ToPort" : "22",
                           "CidrIp : "0.0.0.0/0" } ]
